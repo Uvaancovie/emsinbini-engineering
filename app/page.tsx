@@ -16,8 +16,8 @@ export default function Home() {
                   ENSIMBINI ENGINEERING CC
                 </h1>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Professional engineering solutions for all your needs. We deliver quality, reliability, and excellence
-                  in every project.
+                We specialize in precision and general engineering - Turning,shafts
+                ,pumps,rollers, milling, fitting and fabrication.
                 </p>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button asChild>
@@ -32,7 +32,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                 <img
-                  src="/placeholder.svg?height=400&width=600"
+                  src="https://pnjqqkfklormkqcysssl.supabase.co/storage/v1/object/public/emsinbini//fabrication.jpg"
                   alt="Engineering Project"
                   className="rounded-lg object-cover w-full aspect-video"
                 />
@@ -53,9 +53,16 @@ export default function Home() {
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-              <Card>
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-48 w-full">
+                  <img
+                    src="https://pnjqqkfklormkqcysssl.supabase.co/storage/v1/object/public/emsinbini//drilling.jpg"
+                    alt="Drilling Services"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <CardContent className="p-6 space-y-4">
-                  <div className="p-2 bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center">
+                  <div className="p-2 bg-blue-50 rounded-full w-12 h-12 flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -66,20 +73,27 @@ export default function Home() {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="h-6 w-6"
+                      className="h-6 w-6 text-blue-600"
                     >
                       <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold">Mechanical Engineering</h3>
-                  <p className="text-gray-500">
-                    Design, analysis, and implementation of mechanical systems and components.
+                  <h3 className="text-xl font-bold text-blue-800">Drilling</h3>
+                  <p className="text-gray-600">
+                    Precision drilling services for various materials including ferrous metals, non-ferrous metals, plastics, and tuffnol.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-48 w-full">
+                  <img
+                    src="https://pnjqqkfklormkqcysssl.supabase.co/storage/v1/object/public/emsinbini/fabrication.jpg"
+                    alt="Fabrication Services"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <CardContent className="p-6 space-y-4">
-                  <div className="p-2 bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center">
+                  <div className="p-2 bg-blue-50 rounded-full w-12 h-12 flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -90,22 +104,29 @@ export default function Home() {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="h-6 w-6"
+                      className="h-6 w-6 text-blue-600"
                     >
                       <path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14" />
                       <path d="M2 20h20" />
                       <path d="M14 12v.01" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold">Structural Engineering</h3>
-                  <p className="text-gray-500">
-                    Analysis and design of structures to ensure safety, functionality, and durability.
+                  <h3 className="text-xl font-bold text-blue-800">Fabrication</h3>
+                  <p className="text-gray-600">
+                    Custom fabrication services for various materials. We handle complex projects with precision and attention to detail.
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-48 w-full">
+                  <img
+                    src="https://pnjqqkfklormkqcysssl.supabase.co/storage/v1/object/public/emsinbini//milling.jpg"
+                    alt="Milling Services"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <CardContent className="p-6 space-y-4">
-                  <div className="p-2 bg-gray-100 rounded-full w-12 h-12 flex items-center justify-center">
+                  <div className="p-2 bg-blue-50 rounded-full w-12 h-12 flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -116,7 +137,7 @@ export default function Home() {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="h-6 w-6"
+                      className="h-6 w-6 text-blue-600"
                     >
                       <path d="M2 12h20" />
                       <path d="M6 12v8" />
@@ -128,9 +149,9 @@ export default function Home() {
                       <path d="M4 4h16" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold">Civil Engineering</h3>
-                  <p className="text-gray-500">
-                    Design and construction of infrastructure projects including buildings, roads, and bridges.
+                  <h3 className="text-xl font-bold text-blue-800">Milling</h3>
+                  <p className="text-gray-600">
+                    Advanced milling services using state-of-the-art equipment. We work with various materials to meet your specifications.
                   </p>
                 </CardContent>
               </Card>
@@ -180,26 +201,45 @@ export default function Home() {
         </section>
 
         {/* Clients Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-blue-50">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Clients</h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-800">Our Clients</h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   We've had the pleasure of working with these esteemed organizations.
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-center mt-8">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((client) => (
-                <div key={client} className="flex items-center justify-center p-4">
-                  <img
-                    src={`/placeholder.svg?height=80&width=160&text=Client+${client}`}
-                    alt={`Client ${client}`}
-                    className="max-h-12 opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0"
-                  />
-                </div>
-              ))}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center mt-8">
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img
+                  src="https://pnjqqkfklormkqcysssl.supabase.co/storage/v1/object/public/emsinbini//transet-port-terminals.png"
+                  alt="Transnet Port Terminals"
+                  className="max-h-12 w-auto object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img
+                  src="https://pnjqqkfklormkqcysssl.supabase.co/storage/v1/object/public/emsinbini//cps.jpg"
+                  alt="CPS Projects"
+                  className="max-h-12 w-auto object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img
+                  src="https://pnjqqkfklormkqcysssl.supabase.co/storage/v1/object/public/emsinbini//konecranes.png"
+                  alt="Konecranes"
+                  className="max-h-12 w-auto object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img
+                  src="https://pnjqqkfklormkqcysssl.supabase.co/storage/v1/object/public/emsinbini//zpmc.jpg"
+                  alt="ZMPC Africa"
+                  className="max-h-12 w-auto object-contain"
+                />
+              </div>
             </div>
           </div>
         </section>

@@ -1,5 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card"
 
+const teamMembers = [
+  { name: "Marlon Naidoo", title: "Lead Engineer , Ceo & Founder" },
+  { name: "Michelle Naidoo", title: "Executive Director" },
+  { name: "Liam Naidoo ", title: "Executive" },
+]
+
 export default function AboutPage() {
   return (
     <div className="container px-4 py-12 md:px-6 md:py-24">
@@ -98,15 +104,15 @@ export default function AboutPage() {
             passionate about their work and committed to delivering exceptional results.
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((member) => (
-              <div key={member} className="text-center">
+            {teamMembers.map((member, idx) => (
+              <div key={idx} className="text-center">
                 <img
-                  src={`/placeholder.svg?height=300&width=300&text=Team+Member+${member}`}
-                  alt={`Team Member ${member}`}
+                  src={`/placeholder.svg?height=300&width=300&text=${encodeURIComponent(member.name)}`}
+                  alt={member.name}
                   className="mx-auto rounded-full w-32 h-32 object-cover mb-4"
                 />
-                <h3 className="text-lg font-bold">Team Member {member}</h3>
-                <p className="text-gray-500">Position Title</p>
+                <h3 className="text-lg font-bold">{member.name}</h3>
+                <p className="text-gray-500">{member.title}</p>
               </div>
             ))}
           </div>
