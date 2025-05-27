@@ -10,6 +10,16 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone } from "lucide-react"
 
+function openWhatsApp(phone: string, message: string) {
+  // Format phone for WhatsApp (South Africa: +27)
+  let formatted = phone.replace(/\D/g, "")
+  if (formatted.startsWith("0")) formatted = "27" + formatted.slice(1)
+  window.open(
+    `https://wa.me/${formatted}?text=${encodeURIComponent(message)}`,
+    "_blank"
+  )
+}
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -18,24 +28,33 @@ export default function ContactPage() {
     subject: "",
     message: "",
   })
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real application, you would send this data to your server
-    console.log("Form submitted:", formData)
-    alert("Thank you for your message. We will get back to you soon!")
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
+    setLoading(true)
+    // Send email via API
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
     })
+    setLoading(false)
+    if (res.ok) {
+      alert("Thank you for your message. We will get back to you soon!")
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
+      // If phone is provided, open WhatsApp
+      if (formData.phone) {
+        openWhatsApp(formData.phone, `Hello, my name is ${formData.name}. ${formData.message}`)
+      }
+    } else {
+      alert("There was an error sending your message. Please try again later.")
+    }
   }
 
   return (
@@ -110,8 +129,8 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full">
-                  Send Message
+                <Button type="submit" className="w-full" disabled={loading}>
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </CardContent>

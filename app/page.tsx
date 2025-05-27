@@ -171,23 +171,37 @@ export default function Home() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Projects</h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Take a look at some of our recent engineering projects.
+                  Take a look at some of our recent engineering projects and case studies.
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-              {[1, 2, 3].map((project) => (
-                <div key={project} className="overflow-hidden rounded-lg">
-                  <img
-                    src={`/placeholder.svg?height=300&width=400&text=Project+${project}`}
-                    alt={`Project ${project}`}
-                    className="w-full h-48 object-cover transition-all hover:scale-105"
-                  />
-                  <div className="p-4 bg-white">
-                    <h3 className="text-xl font-bold">Engineering Project {project}</h3>
-                    <p className="text-gray-500 mt-2">
-                      A brief description of this engineering project and the solutions we provided.
-                    </p>
+              {require("@/lib/projects").projects.slice(0, 3).map((project: any) => (
+                <div key={project.id} className="overflow-hidden rounded-lg bg-white flex flex-col h-full hover:shadow-lg transition-shadow">
+                  <div className="relative h-48 w-full">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover rounded-t-lg"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-4 flex flex-col flex-1">
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-gray-600 text-sm mb-2">{project.summary}</p>
+                    <div className="text-gray-800 text-xs mb-1">
+                      <span className="font-semibold">Scenario:</span> {project.scenario}
+                    </div>
+                    <div className="text-gray-800 text-xs mb-1">
+                      <span className="font-semibold">Solution:</span> {project.solution}
+                    </div>
+                    <div className="flex flex-wrap gap-1 mt-auto pt-2">
+                      {project.tags.map((tag: string) => (
+                        <span key={tag} className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-medium">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
