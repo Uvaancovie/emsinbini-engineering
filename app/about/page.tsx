@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="grid gap-8 md:grid-cols-2">
           <div>
             <img
-              src="/placeholder.svg?height=400&width=600&text=Company+Image"
+              src="https://pnjqqkfklormkqcysssl.supabase.co/storage/v1/object/public/projects/stories.jpeg"
               alt="ENSIMBINI ENGINEERING Office"
               className="rounded-lg object-cover w-full aspect-video"
             />
