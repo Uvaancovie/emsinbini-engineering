@@ -4,6 +4,7 @@ const teamMembers = [
   { name: "Marlon Naidoo", title: "Lead Engineer , Ceo & Founder" },
   { name: "Michelle Naidoo", title: "Executive Director" },
   { name: "Liam Naidoo ", title: "Executive" },
+  { name: "Kriesan Chetty ", title: "Executive" },
 ]
 
 export default function AboutPage() {
